@@ -2,13 +2,29 @@
 //  ViewController.swift
 //  ButtonExercise
 //
-//  Created by Mick Soumphonphakdy on 6/15/15.
-//  Copyright (c) 2015 Mick Soum. All rights reserved.
+//
 //
 
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var randomStrings:[String] = ["Hey", "You", "What",
+    "Are", "Doing"]
+    
+  
+    
+    @IBOutlet weak var textLabel: UILabel!
+    
+    @IBAction func pressMe(sender: AnyObject) {
+     
+     let randomIndex = Int(arc4random_uniform(UInt32(self.randomStrings.count)))
+            
+            self.textLabel.text = self.randomStrings[randomIndex]
+        
+     
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
